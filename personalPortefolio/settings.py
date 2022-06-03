@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4_zm5eaa750+m+g^3b=^#9@l9682*oxyvk^2sb@q3jur)n!xaq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['portefolio-env.eba-euqyezhf.eu-west-3.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'portefolio.apps.PortefolioConfig',
+    'compressor',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -119,7 +121,27 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+STATIC_ROOT = os.path.join(BASE_DIR, "/static/")
+
+SASS_PROCESSOR_INCLUDE_DIRS = [
+    BASE_DIR / 'node_modules',
+]
+SASS_PRECISION = 8
+STATICFILES_DIRS = [ BASE_DIR / "static", 
+]
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+    'sass_processor.finders.CssFinder',
+    # 'django_scss.finders.SCSSFinder',
+]
+#Django Sass
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, "/static/")
+COMPRESS_PRECOMPILER = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

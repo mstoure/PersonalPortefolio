@@ -1,0 +1,101 @@
+{% load static %}
+{% load sass_tags %}
+{% load compress %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="fr-FR">
+    
+    <title>Portefolio de Mamadou Toure | Développeur Full Stack | {% block title %}{% endblock title %}</title>
+    
+    <meta content="Mon expérience en tant que développeur web en freelance a été très riche. J’ai pu travailler en équipe ou encore seul sur des projets très variés dans divers secteurs d’activités. Aujourd'hui, mon objectif est de trouver un emploi dans une entreprise en pleine croissance." name="description">
+    
+    <meta content="portfolio, développeur, web, fullstack, programmeur, front-end, back-end" name="keywords">
+    
+    <!-- Favicons -->
+    <!-- <link href="{% static 'assets/img/favicon.png' %}" rel="icon"> -->
+    <!-- <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon"> -->
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    
+    <!-- Template Main CSS and scss File -->
+    {% compress css %}
+    <link type="text/x-scss" href="{% static 'assets/vendor/boostrap/scss/bootstrap.scss' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" type="text/css">
+    {% endcompress %}
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-          PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/bootstrap-icons/font/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/font/fonts/Roboto-Regular.ttf' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    
+    <!-- Bootstrap 5.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- ======= Background video ======= -->
+    <video playsinline autoplay muted loop poster="" id="bgvid">
+        <source src="{% static 'assets/video/feu.mp4' %}" type="video/mp4">
+    </video>
+    
+    <!-- ======= Spinner animation ======= -->
+    <!-- <div class="loader">
+        <div class="face">
+            <div class="circle"></div>
+        </div>
+        <div class="face">
+            <div class="circle"></div>
+        </div>
+    </div> -->
+    
+    <!-- ======= Header ======= -->
+    <header id="header">
+        <div class="container">
+            <h1><a href="{% url 'index' %}">Mamadou Touré</a></h1>
+            <!-- Décommente ci-dessous pour utiliser un logo image à la place du nom -->
+            <!-- <a href="index.html" class="mr-auto"><img src="{% static 'assets/img/M.png' %}" alt="" class="img-fluid"></a> -->
+            <h2>Je suis un <span class="typed" data-typed-items="Développeur Full Stack, Développeur Front End et Back End, Programmeur de Logiciel, Programmeur de Jeux vidéo"></span></h2>
+            
+            <!-- ======= Mobile nav toggle button ======= -->
+            <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button>-->
+            <nav id="navbar" class="navbar-collapse">
+                <ul>
+                    <li><a class="nav-link active" href="#header">Accueil</a></li>
+                    <li><a class="nav-link" href="#about">À Propos</a></li>
+                    <li><a class="nav-link" href="#resume">Expériences</a></li>
+                    <!-- <li><a class="nav-link" href="#services">Services</a></li> -->
+                    <!-- <li><a class="nav-link" href="#portfolio">Portfolio</a></li> -->
+                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- navbar -->
+            
+            <div class="social-links">
+                <a href="https://github.com/mstoure" class="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/mamadoutoureca" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                <a href="https://twitter.com/Souraka_D_S" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="https://medium.com/@Mstoure" class="Medium"><i class="bi bi-medium"></i></a>
+                <a href="https://join.skype.com/invite/BqpMI3S2Hy3a" class="skype"><i class="bi bi-skype"></i></a>
+            </div>
+        </div>
+    </header><!-- End Header -->
+    
+</body>
+</html>
+
+<body>
+  
+  
+  

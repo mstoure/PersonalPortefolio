@@ -1,0 +1,29 @@
+# Python
+*.pyc
+*~
+__pycache__
+
+# Env
+.env
+myvenv/
+venv/
+
+# Base de donnée
+db.sqlite3
+
+# Text backup files
+*.bak
+
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# Visual Studio
+.vscode/
+.history/
+*.code-workspace
+
+Text
+XPath: /pre[2]/code
